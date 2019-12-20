@@ -104,7 +104,7 @@ public final class CameraManager {
             initialized = true;
             configManager.initFromCameraParameters(theCamera);
             if (requestedFramingRectWidth > 0 && requestedFramingRectHeight > 0) {
-                setManualFramingRect(requestedFramingRectWidth, requestedFramingRectHeight);
+                setManualFramingRect(0,requestedFramingRectWidth, requestedFramingRectHeight);
                 requestedFramingRectWidth = 0;
                 requestedFramingRectHeight = 0;
             }
@@ -186,7 +186,6 @@ public final class CameraManager {
     }
 
     /**
-     * Convenience method for {@link com.king.zxing.CaptureActivity}
      *
      * @param newSetting if {@code true}, light should be turned on if currently off. And vice versa.
      */
@@ -344,18 +343,26 @@ public final class CameraManager {
      * @param width The width in pixels to scan.
      * @param height The height in pixels to scan.
      */
-    public synchronized void setManualFramingRect(int width, int height) {
+    public synchronized void setManualFramingRect(int i, int width, int height) {
         if (initialized) {
             Point screenResolution = configManager.getScreenResolution();
+            int b;
+            if (i == 0) {
+                b = screenResolution.y;
+            } else {
+                b = i;
+            }
             if (width > screenResolution.x) {
                 width = screenResolution.x;
             }
-            if (height > screenResolution.y) {
-                height = screenResolution.y;
+            if (height > b) {
+                height = b;
             }
+
             int leftOffset = (screenResolution.x - width) / 2;
-            int topOffset = (screenResolution.y - height) / 2;
-            framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
+            int topOffset = (b - height) / 2;
+            framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
+                    topOffset + height);
             Log.d(TAG, "Calculated manual framing rect: " + framingRect);
             framingRectInPreview = null;
         } else {

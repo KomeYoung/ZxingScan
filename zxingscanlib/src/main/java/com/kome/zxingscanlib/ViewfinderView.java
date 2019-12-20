@@ -323,13 +323,19 @@ public final class ViewfinderView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //扫码框默认居中，支持利用内距偏移扫码框
-        int leftOffset = (screenWidth - frameWidth) / 2 + getPaddingLeft() - getPaddingRight();
-        int topOffset = (screenHeight - frameHeight) / 2 + getPaddingTop() - getPaddingBottom();
-        frame = new Rect(leftOffset, topOffset, leftOffset + frameWidth, topOffset + frameHeight);
+//        int leftOffset = (screenWidth - frameWidth) / 2 + getPaddingLeft() - getPaddingRight();
+//        int topOffset = (screenHeight - frameHeight) / 2 + getPaddingTop() - getPaddingBottom();
+//        frame = new Rect(leftOffset, topOffset, leftOffset + frameWidth, topOffset + frameHeight);
     }
 
     @Override
     public void onDraw(Canvas canvas) {
+
+        //扫码框默认居中，支持利用内距偏移扫码框
+        int leftOffset = (canvas.getWidth() - frameWidth) / 2 + getPaddingLeft() - getPaddingRight();
+        int topOffset = (canvas.getHeight() - frameHeight) / 2 + getPaddingTop() - getPaddingBottom();
+        frame = new Rect(leftOffset, topOffset, leftOffset + frameWidth, topOffset + frameHeight);
+
 
         if (frame == null) {
             return;
