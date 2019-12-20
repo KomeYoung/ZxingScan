@@ -1,0 +1,2 @@
+include ':app', ':zxingscanlib'
+rootProject.name='My Application'
