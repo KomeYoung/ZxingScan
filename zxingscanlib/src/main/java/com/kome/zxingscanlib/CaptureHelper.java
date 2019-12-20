@@ -31,8 +31,8 @@ import android.view.View;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
-import com.king.zxing.camera.CameraManager;
-import com.king.zxing.camera.FrontLightMode;
+import com.kome.zxingscanlib.camera.CameraManager;
+import com.kome.zxingscanlib.camera.FrontLightMode;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,9 +67,9 @@ public class CaptureHelper implements CaptureLifecycle,CaptureTouchEvent,Capture
     private SurfaceHolder surfaceHolder;
     private View ivTorch;
 
-    private Collection<BarcodeFormat> decodeFormats;
+    private Collection<BarcodeFormat>  decodeFormats;
     private Map<DecodeHintType,Object> decodeHints;
-    private String characterSet;
+    private String                     characterSet;
 
     private boolean hasSurface;
     /**

@@ -25,8 +25,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 
-import com.king.zxing.camera.CameraManager;
-import com.king.zxing.camera.FrontLightMode;
+import com.kome.zxingscanlib.camera.CameraManager;
+import com.kome.zxingscanlib.camera.FrontLightMode;
+
 
 /**
  * Detects ambient light and switches on the front light when very dark, and off again when sufficiently light.
@@ -48,9 +49,9 @@ final class AmbientLightManager implements SensorEventListener {
      */
     private float brightEnoughLux = BRIGHT_ENOUGH_LUX;
 
-    private final Context context;
-    private CameraManager cameraManager;
-    private Sensor lightSensor;
+    private final Context       context;
+    private       CameraManager cameraManager;
+    private       Sensor        lightSensor;
 
     AmbientLightManager(Context context) {
         this.context = context;

@@ -27,9 +27,10 @@ import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
 
-import com.king.zxing.Preferences;
-import com.king.zxing.camera.open.CameraFacing;
-import com.king.zxing.camera.open.OpenCamera;
+import com.kome.zxingscanlib.Preferences;
+import com.kome.zxingscanlib.camera.open.CameraFacing;
+import com.kome.zxingscanlib.camera.open.OpenCamera;
+
 
 /**
  * A class which deals with reading, parsing, and setting the camera parameters which are used to

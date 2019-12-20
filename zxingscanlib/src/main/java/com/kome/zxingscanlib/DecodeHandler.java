@@ -19,7 +19,6 @@ package com.kome.zxingscanlib;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.graphics.PointF;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,14 +32,12 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;
-import com.google.zxing.NotFoundException;
 import com.google.zxing.PlanarYUVLuminanceSource;
-import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.common.GlobalHistogramBinarizer;
 import com.google.zxing.common.HybridBinarizer;
-import com.king.zxing.camera.CameraManager;
+import com.kome.zxingscanlib.camera.CameraManager;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Map;
@@ -49,11 +46,11 @@ final class DecodeHandler extends Handler {
 
     private static final String TAG = DecodeHandler.class.getSimpleName();
 
-    private final Context context;
-    private final CameraManager cameraManager;
-    private final CaptureHandler handler;
+    private final Context           context;
+    private final CameraManager     cameraManager;
+    private final CaptureHandler    handler;
     private final MultiFormatReader multiFormatReader;
-    private boolean running = true;
+    private       boolean           running = true;
 
     private long lastZoomTime;
 

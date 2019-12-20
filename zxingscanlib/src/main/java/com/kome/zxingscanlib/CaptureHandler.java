@@ -16,10 +16,11 @@ import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;
-import com.king.zxing.camera.CameraManager;
+import com.kome.zxingscanlib.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.Map;
+
 
 /**
  * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>
@@ -29,15 +30,15 @@ public class CaptureHandler extends Handler implements ResultPointCallback {
     private static final String TAG = CaptureHandler.class.getSimpleName();
 
     private final OnCaptureListener onCaptureListener;
-    private final DecodeThread decodeThread;
-    private State state;
-    private final CameraManager cameraManager;
-    private final Activity activity;
-    private final ViewfinderView viewfinderView;
+    private final DecodeThread      decodeThread;
+    private       State             state;
+    private final CameraManager     cameraManager;
+    private final Activity          activity;
+    private final ViewfinderView    viewfinderView;
     /**
      * 是否支持垂直的条形码
      */
-    private boolean isSupportVerticalCode;
+    private       boolean           isSupportVerticalCode;
 
     /**
      * 是否返回扫码原图

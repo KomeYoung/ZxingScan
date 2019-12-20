@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 
 import com.google.zxing.Result;
 
+
 /**
  * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>
  */

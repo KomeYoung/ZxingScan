@@ -17,17 +17,17 @@ package com.kome.zxingscanlib;
  */
 
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.DecodeHintType;
-import com.google.zxing.ResultPointCallback;
-import com.king.zxing.camera.CameraManager;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.DecodeHintType;
+import com.google.zxing.ResultPointCallback;
+import com.kome.zxingscanlib.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.EnumMap;
@@ -45,12 +45,12 @@ final class DecodeThread extends Thread {
     public static final String BARCODE_BITMAP = "barcode_bitmap";
     public static final String BARCODE_SCALED_FACTOR = "barcode_scaled_factor";
 
-    private final Context context;
-    private final CameraManager cameraManager;
+    private final Context                    context;
+    private final CameraManager              cameraManager;
     private final Map<DecodeHintType,Object> hints;
-    private Handler handler;
-    private CaptureHandler captureHandler;
-    private final CountDownLatch handlerInitLatch;
+    private       Handler                    handler;
+    private       CaptureHandler             captureHandler;
+    private final CountDownLatch             handlerInitLatch;
 
     DecodeThread(Context context,CameraManager cameraManager,
                  CaptureHandler captureHandler,

@@ -26,8 +26,8 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 
 import com.google.zxing.PlanarYUVLuminanceSource;
-import com.king.zxing.camera.open.OpenCamera;
-import com.king.zxing.camera.open.OpenCameraInterface;
+import com.kome.zxingscanlib.camera.open.OpenCamera;
+import com.kome.zxingscanlib.camera.open.OpenCameraInterface;
 
 import java.io.IOException;
 
@@ -50,18 +50,18 @@ public final class CameraManager {
     private static final int MAX_FRAME_WIDTH = 1200; // = 5/8 * 1920
     private static final int MAX_FRAME_HEIGHT = 675; // = 5/8 * 1080
 
-    private final Context context;
+    private final Context                    context;
     private final CameraConfigurationManager configManager;
-    private OpenCamera camera;
-    private AutoFocusManager autoFocusManager;
-    private Rect framingRect;
-    private Rect framingRectInPreview;
-    private boolean initialized;
-    private boolean previewing;
-    private int requestedCameraId = OpenCameraInterface.NO_REQUESTED_CAMERA;
-    private int requestedFramingRectWidth;
-    private int requestedFramingRectHeight;
-    private boolean isFullScreenScan;
+    private       OpenCamera                 camera;
+    private       AutoFocusManager           autoFocusManager;
+    private       Rect                       framingRect;
+    private       Rect                       framingRectInPreview;
+    private       boolean                    initialized;
+    private       boolean                    previewing;
+    private       int                        requestedCameraId = OpenCameraInterface.NO_REQUESTED_CAMERA;
+    private       int                        requestedFramingRectWidth;
+    private       int                        requestedFramingRectHeight;
+    private       boolean                    isFullScreenScan;
 
     private float framingRectRatio;
     private int framingRectVerticalOffset;

@@ -18,6 +18,7 @@ package com.kome.zxingscanlib;
 
 import android.content.Intent;
 import android.net.Uri;
+
 import com.google.zxing.BarcodeFormat;
 
 import java.util.Arrays;

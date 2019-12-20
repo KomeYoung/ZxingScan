@@ -15,7 +15,8 @@
  */
 package com.kome.zxingscanlib;
 
-import com.king.zxing.camera.CameraManager;
+
+import com.kome.zxingscanlib.camera.CameraManager;
 
 /**
  * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>

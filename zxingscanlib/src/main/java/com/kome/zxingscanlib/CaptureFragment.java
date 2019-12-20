@@ -21,7 +21,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.king.zxing.camera.CameraManager;
+import com.kome.zxingscanlib.camera.CameraManager;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;

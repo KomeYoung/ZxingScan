@@ -20,7 +20,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.king.zxing.Preferences;
+import com.kome.zxingscanlib.Preferences;
+
 
 /**
  * Enumerates settings of the preference controlling the front light.
